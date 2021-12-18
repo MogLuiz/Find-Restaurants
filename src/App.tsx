@@ -6,10 +6,14 @@ import Home from "./pages/Home";
 
 // Theme
 import theme from "./styles/theme/theme";
-import {} from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 function App() {
-  return <Home />;
+  return (
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
+  );
 }
 
 export default App;
