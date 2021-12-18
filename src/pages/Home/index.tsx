@@ -1,10 +1,20 @@
 // Packages
 import React from "react";
 
-import { Container } from "./styles";
+// Assets
+import logo from "../../assets/logo.svg";
+
+// Styles
+import { Container, Search } from "./styles";
 
 const Home: React.FC = () => {
-  return <Container>Hello World</Container>;
+  return (
+    <Container>
+      <Search>
+        <img src={logo} alt="Logo da aplicação" />
+      </Search>
+    </Container>
+  );
 };
 
 export default Home;
