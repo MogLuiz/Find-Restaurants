@@ -6,6 +6,7 @@ import logo from "../../assets/logo.svg";
 
 // Components
 import TextField, { Input } from "@material/react-text-field";
+import MaterialIcon from "@material/react-material-icon";
 
 // Styles
 import { Container, Search } from "./styles";
