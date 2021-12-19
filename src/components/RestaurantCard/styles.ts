@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Restaurant = styled.div`
+export const RestaurantContainer = styled.div`
     display: flex;
     justify-content: space-between;
 
@@ -17,4 +17,32 @@ export const Restaurant = styled.div`
         border-left: 5px solid ${props => props.theme.colors.primary};
         background-color: ${props => props.theme.colors.background};
     }
+`
+
+export const RestaurantInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
+export const RestaurantName = styled.span`
+    font-family: ${props => props.theme.fonts.regular};
+    font-size: 24px;
+    font-weight: bold;
+
+    line-height: 29px;
+
+    margin-bottom: 10px;
+
+    color: ${props => props.theme.colors.text};
+`
+
+export const RestaurantAdress = styled.span`
+    font-family: ${props => props.theme.fonts.regular};
+    font-size: 16px;
+
+    line-height: 19px;
+
+    margin-bottom: 10px;
+
+    color: ${props => props.theme.colors.text};
 `
