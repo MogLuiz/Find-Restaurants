@@ -33,6 +33,6 @@ export const Logo = styled.img`
 `
 
 export const Map = styled.div`
-    background-color: red;
+    background-color: ${props => props.theme.colors.text};
     flex: 1;
 `
