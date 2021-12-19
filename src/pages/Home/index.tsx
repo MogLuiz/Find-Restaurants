@@ -9,7 +9,7 @@ import TextField, { Input } from "@material/react-text-field";
 import MaterialIcon from "@material/react-material-icon";
 
 // Styles
-import { Container, Search, Logo, Wrapper, Map } from "./styles";
+import { Container, Search, Logo, Wrapper, Map, CarouselTitle } from "./styles";
 
 const Home: React.FC = () => {
   // -------------------------------------------------
@@ -36,6 +36,7 @@ const Home: React.FC = () => {
               onChange={(e: any) => setSearchInputValue(e.target.value)}
             />
           </TextField>
+          <CarouselTitle>Na sua área</CarouselTitle>
         </Search>
       </Container>
       <Map />
