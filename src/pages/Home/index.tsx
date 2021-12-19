@@ -55,6 +55,12 @@ const Home: React.FC = () => {
             <div>
               <img src={restaurants} alt="Imagem do restaurante" />
             </div>
+            <div>
+              <img src={restaurants} alt="Imagem do restaurante" />
+            </div>
+            <div>
+              <img src={restaurants} alt="Imagem do restaurante" />
+            </div>
           </Slider>
         </Search>
       </Container>
