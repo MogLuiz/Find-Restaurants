@@ -4,6 +4,9 @@ import React, { useState } from "react";
 // Assets
 import logo from "../../assets/logo.svg";
 
+// Utils
+import { carouselSettings } from "./utils";
+
 // Components
 import TextField, { Input } from "@material/react-text-field";
 import MaterialIcon from "@material/react-material-icon";
