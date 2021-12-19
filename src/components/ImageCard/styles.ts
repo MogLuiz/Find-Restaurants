@@ -5,6 +5,8 @@ interface ICardStyledComponent {
 }
 
 export const Card = styled.div<ICardStyledComponent>`
+    padding: 5px;
+
     height: 90px;
     height: 90px;
 
@@ -12,4 +14,11 @@ export const Card = styled.div<ICardStyledComponent>`
 
     background-image: url(${props => props.photo});
     background-size: cover;
+`
+
+export const Title = styled.span`
+    font-family: ${props => props.theme.fonts.regular};
+    font-size: 16px;
+
+    color: ${props => props.theme.colors.white};
 `

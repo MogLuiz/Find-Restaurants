@@ -2,14 +2,17 @@
 import React from "react";
 
 // Styles
-import { Card } from "./styles";
+import { Card, Title } from "./styles";
 
 interface IImageCardProps {
   photo: string;
+  restaurantName: string;
 }
 
-const ImageCard: React.FC<IImageCardProps> = ({ photo }) => (
-  <Card photo={photo} />
+const ImageCard: React.FC<IImageCardProps> = ({ photo, restaurantName }) => (
+  <Card photo={photo}>
+    <Title>{restaurantName}</Title>
+  </Card>
 );
 
 export default ImageCard;

@@ -2,7 +2,7 @@ export const carouselSettings = {
   dots: false,
   infinite: true,
   speed: 300,
-  slidesToShow: 4,
-  slidesToScroll: 4,
+  slidesToShow: 3,
+  slidesToScroll: 3,
   adaptiveHeight: true,
 };

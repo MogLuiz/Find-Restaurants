@@ -1,4 +1,8 @@
+// Packages
 import styled from "styled-components";
+
+// Components
+import Slider from "react-slick";
 
 export const Wrapper = styled.div`
     display: flex;
@@ -35,6 +39,12 @@ export const Logo = styled.img`
 export const Map = styled.div`
     background-color: ${props => props.theme.colors.text};
     flex: 1;
+`
+
+export const Carousel = styled(Slider)`
+    .slick-Slide {
+        margin-right: 16px;
+    }
 `
 
 export const CarouselTitle = styled.h1`

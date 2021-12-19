@@ -15,7 +15,15 @@ import ImageCard from "../../components/ImageCard";
 import Slider from "react-slick";
 
 // Styles
-import { Container, Search, Logo, Wrapper, Map, CarouselTitle } from "./styles";
+import {
+  Container,
+  Carousel,
+  Search,
+  Logo,
+  Wrapper,
+  Map,
+  CarouselTitle,
+} from "./styles";
 
 const Home: React.FC = () => {
   // -------------------------------------------------
@@ -43,14 +51,32 @@ const Home: React.FC = () => {
             />
           </TextField>
           <CarouselTitle>Na sua área</CarouselTitle>
-          <Slider {...carouselSettings}>
-            <ImageCard photo={restaurants} />
-            <ImageCard photo={restaurants} />
-            <ImageCard photo={restaurants} />
-            <ImageCard photo={restaurants} />
-            <ImageCard photo={restaurants} />
-            <ImageCard photo={restaurants} />
-          </Slider>
+          <Carousel {...carouselSettings}>
+            <ImageCard
+              photo={restaurants}
+              restaurantName="Nome do restaurante"
+            />
+            <ImageCard
+              photo={restaurants}
+              restaurantName="Nome do restaurante"
+            />
+            <ImageCard
+              photo={restaurants}
+              restaurantName="Nome do restaurante"
+            />
+            <ImageCard
+              photo={restaurants}
+              restaurantName="Nome do restaurante"
+            />
+            <ImageCard
+              photo={restaurants}
+              restaurantName="Nome do restaurante"
+            />
+            <ImageCard
+              photo={restaurants}
+              restaurantName="Nome do restaurante"
+            />
+          </Carousel>
         </Search>
       </Container>
       <Map />
