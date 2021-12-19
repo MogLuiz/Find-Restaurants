@@ -11,6 +11,7 @@ import { carouselSettings } from "./utils";
 // Components
 import TextField, { Input } from "@material/react-text-field";
 import MaterialIcon from "@material/react-material-icon";
+import ImageCard from "../../components/ImageCard";
 import Slider from "react-slick";
 
 // Styles
@@ -43,24 +44,12 @@ const Home: React.FC = () => {
           </TextField>
           <CarouselTitle>Na sua área</CarouselTitle>
           <Slider {...carouselSettings}>
-            <div>
-              <img src={restaurants} alt="Imagem do restaurante" />
-            </div>
-            <div>
-              <img src={restaurants} alt="Imagem do restaurante" />
-            </div>
-            <div>
-              <img src={restaurants} alt="Imagem do restaurante" />
-            </div>
-            <div>
-              <img src={restaurants} alt="Imagem do restaurante" />
-            </div>
-            <div>
-              <img src={restaurants} alt="Imagem do restaurante" />
-            </div>
-            <div>
-              <img src={restaurants} alt="Imagem do restaurante" />
-            </div>
+            <ImageCard photo={restaurants} />
+            <ImageCard photo={restaurants} />
+            <ImageCard photo={restaurants} />
+            <ImageCard photo={restaurants} />
+            <ImageCard photo={restaurants} />
+            <ImageCard photo={restaurants} />
           </Slider>
         </Search>
       </Container>

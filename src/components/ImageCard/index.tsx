@@ -1,9 +1,15 @@
+// Packages
 import React from "react";
 
-// import { Container } from './styles';
+// Styles
+import { Card } from "./styles";
 
-const ImageCard: React.FC = () => {
-  return <div />;
-};
+interface IImageCardProps {
+  photo: string;
+}
+
+const ImageCard: React.FC<IImageCardProps> = ({ photo }) => (
+  <Card photo={photo} />
+);
 
 export default ImageCard;
