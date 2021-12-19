@@ -10,6 +10,9 @@ interface IImageCardProps {
 }
 
 const ImageCard: React.FC<IImageCardProps> = ({ photo, restaurantName }) => (
+  // -------------------------------------------------
+  // Render
+  // -------------------------------------------------
   <Card photo={photo}>
     <Title>{restaurantName}</Title>
   </Card>

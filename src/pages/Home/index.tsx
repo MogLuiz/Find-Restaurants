@@ -12,7 +12,7 @@ import { carouselSettings } from "./utils";
 import TextField, { Input } from "@material/react-text-field";
 import MaterialIcon from "@material/react-material-icon";
 import ImageCard from "../../components/ImageCard";
-import Slider from "react-slick";
+import RestaurantCard from "../../components/RestaurantCard";
 
 // Styles
 import {
@@ -78,6 +78,7 @@ const Home: React.FC = () => {
             />
           </Carousel>
         </Search>
+        <RestaurantCard />
       </Container>
       <Map />
     </Wrapper>
