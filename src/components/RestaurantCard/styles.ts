@@ -46,3 +46,12 @@ export const RestaurantAdress = styled.span`
 
     color: ${props => props.theme.colors.text};
 `
+
+export const RestaurantImage = styled.img`
+    width: 100px;
+    height: 100px;
+
+    border-radius: 6px;
+
+    object-fit: cover;
+`

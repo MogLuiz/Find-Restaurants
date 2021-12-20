@@ -1,5 +1,8 @@
 // Packages
-import React, { useState } from "react";
+import React from "react";
+
+// Assets
+import restaurants from "../../assets/restaurante-fake.png";
 
 // // Components
 import StarRating from "react-star-ratings";
@@ -10,6 +13,7 @@ import {
   RestaurantAdress,
   RestaurantInfo,
   RestaurantName,
+  RestaurantImage,
 } from "./styles";
 
 const RestaurantCard: React.FC = () => {
@@ -27,6 +31,7 @@ const RestaurantCard: React.FC = () => {
         />
         <RestaurantAdress>Rua Espirito santo, 116</RestaurantAdress>
       </RestaurantInfo>
+      <RestaurantImage src={restaurants} alt="Foto do Restaurante" />
     </RestaurantContainer>
   );
 };
