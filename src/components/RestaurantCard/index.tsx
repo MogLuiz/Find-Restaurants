@@ -1,5 +1,10 @@
-import React from "react";
+// Packages
+import React, { useState } from "react";
 
+// // Components
+import StarRating from "react-star-ratings";
+
+// Styles
 import {
   RestaurantContainer,
   RestaurantAdress,
@@ -15,7 +20,11 @@ const RestaurantCard: React.FC = () => {
     <RestaurantContainer>
       <RestaurantInfo>
         <RestaurantName>Nome do Restaurante</RestaurantName>
-        <p>Avalização</p>
+        <StarRating
+          starDimension="20px"
+          rating={4.5}
+          starRatedColor="hsl(55.08196721311475, 97.60000000000001%, 50.98039215686274%)"
+        />
         <RestaurantAdress>Rua Espirito santo, 116</RestaurantAdress>
       </RestaurantInfo>
     </RestaurantContainer>

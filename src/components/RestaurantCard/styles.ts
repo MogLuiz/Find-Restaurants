@@ -42,7 +42,7 @@ export const RestaurantAdress = styled.span`
 
     line-height: 19px;
 
-    margin-bottom: 10px;
+    margin: 10px 0;
 
     color: ${props => props.theme.colors.text};
 `
