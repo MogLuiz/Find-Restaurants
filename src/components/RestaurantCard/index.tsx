@@ -23,7 +23,7 @@ const RestaurantCard: React.FC = () => {
         <StarRating
           starDimension="20px"
           rating={4.5}
-          starRatedColor="hsl(55.08196721311475, 97.60000000000001%, 50.98039215686274%)"
+          starRatedColor="#FFA72D"
         />
         <RestaurantAdress>Rua Espirito santo, 116</RestaurantAdress>
       </RestaurantInfo>
