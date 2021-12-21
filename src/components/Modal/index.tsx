@@ -8,14 +8,14 @@ import PortalModal from "./Portal";
 import { DialogModal, Overlay } from "./styles";
 
 interface IPropsModalComponent {
-  children: ReactNode;
+  children?: ReactNode;
   open: boolean;
-  onClose: () => boolean;
+  onClose: () => void;
 }
 
 const Modal: React.FC<IPropsModalComponent> = ({ children, onClose, open }) => {
   // -------------------------------------------------
-  // Render
+  // Conditions
   // -------------------------------------------------
   if (!open) return null;
 

@@ -13,6 +13,7 @@ import TextField, { Input } from "@material/react-text-field";
 import MaterialIcon from "@material/react-material-icon";
 import ImageCard from "../../components/ImageCard";
 import RestaurantCard from "../../components/RestaurantCard";
+import Modal from "../../components/Modal";
 
 // Styles
 import {
@@ -31,6 +32,7 @@ const Home: React.FC = () => {
   // -------------------------------------------------
 
   const [searchInputValue, setSearchInputValue] = useState("");
+  const [isOpenedModal, setIsOpenedModal] = useState(false);
 
   // -------------------------------------------------
   // Render
@@ -81,6 +83,10 @@ const Home: React.FC = () => {
         <RestaurantCard />
       </Container>
       <Map />
+      <Modal
+        open={isOpenedModal}
+        onClose={() => setIsOpenedModal(!isOpenedModal)}
+      />
     </Wrapper>
   );
 };
