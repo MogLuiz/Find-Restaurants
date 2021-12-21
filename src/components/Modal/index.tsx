@@ -14,16 +14,29 @@ interface IPropsModalComponent {
 }
 
 const Modal: React.FC<IPropsModalComponent> = ({ children, onClose, open }) => {
+  // -------------------------------------------------
+  // Render
+  // -------------------------------------------------
   if (!open) return null;
 
-  const onOverlayClick = () => {
+  // -------------------------------------------------
+  // Functions
+  // -------------------------------------------------
+  const handleOverlayClick = () => {
     onClose();
   };
 
+  const handleDialogModalClick = (e: any) => {
+    e.stopPropagation();
+  };
+
+  // -------------------------------------------------
+  // Render
+  // -------------------------------------------------
   return (
     <PortalModal>
-      <Overlay onClick={onOverlayClick}>
-        <DialogModal></DialogModal>
+      <Overlay onClick={handleOverlayClick}>
+        <DialogModal onClick={handleDialogModalClick}></DialogModal>
       </Overlay>
     </PortalModal>
   );
