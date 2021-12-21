@@ -15,17 +15,14 @@ interface IPropsModalComponent {
 
 const Modal: React.FC<IPropsModalComponent> = ({ children, onClose, open }) => {
   // -------------------------------------------------
-  // Conditions
-  // -------------------------------------------------
-  if (!open) return null;
-
-  // -------------------------------------------------
   // Hooks
   // -------------------------------------------------
 
   useEffect(() => {
-    const onEsc = (e: any) => {
-      if (e.keyCode === 27) onClose();
+    const onEsc = (event: any) => {
+      if (event.keyCode === 27) {
+        onClose();
+      }
     };
     window.addEventListener("keydown", onEsc);
     return () => {
@@ -34,8 +31,15 @@ const Modal: React.FC<IPropsModalComponent> = ({ children, onClose, open }) => {
   }, []);
 
   // -------------------------------------------------
+  // Conditions
+  // -------------------------------------------------
+
+  if (!open) return null;
+
+  // -------------------------------------------------
   // Functions
   // -------------------------------------------------
+
   const handleOverlayClick = () => {
     onClose();
   };

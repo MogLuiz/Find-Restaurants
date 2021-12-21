@@ -1,5 +1,5 @@
 // Packages
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Assets
 import logo from "../../assets/logo.svg";
@@ -79,6 +79,7 @@ const Home: React.FC = () => {
               restaurantName="Nome do restaurante"
             />
           </Carousel>
+          <button onClick={() => setIsOpenedModal(true)}>Abrir Modal</button>
         </Search>
         <RestaurantCard />
       </Container>
