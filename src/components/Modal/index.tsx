@@ -20,7 +20,7 @@ const Modal: React.FC<IPropsModalComponent> = ({ children, onClose, open }) => {
 
   useEffect(() => {
     const onEsc = (event: any) => {
-      if (event.keyCode === 27) {
+      if (event.keyCode === 27 && open) {
         onClose();
       }
     };
@@ -28,7 +28,7 @@ const Modal: React.FC<IPropsModalComponent> = ({ children, onClose, open }) => {
     return () => {
       window.removeEventListener("keydown", onEsc);
     };
-  }, []);
+  }, [open]);
 
   // -------------------------------------------------
   // Conditions

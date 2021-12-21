@@ -35,6 +35,14 @@ const Home: React.FC = () => {
   const [isOpenedModal, setIsOpenedModal] = useState(false);
 
   // -------------------------------------------------
+  // Functions
+  // -------------------------------------------------
+
+  const handleCloseModal = () => {
+    setIsOpenedModal(!isOpenedModal);
+  };
+
+  // -------------------------------------------------
   // Render
   // -------------------------------------------------
   return (
@@ -84,10 +92,7 @@ const Home: React.FC = () => {
         <RestaurantCard />
       </Container>
       <Map />
-      <Modal
-        open={isOpenedModal}
-        onClose={() => setIsOpenedModal(!isOpenedModal)}
-      />
+      <Modal open={isOpenedModal} onClose={handleCloseModal} />
     </Wrapper>
   );
 };
