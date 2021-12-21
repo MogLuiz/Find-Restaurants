@@ -1,5 +1,5 @@
 // Packages
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 
 // React Portal
 import PortalModal from "./Portal";
@@ -18,6 +18,20 @@ const Modal: React.FC<IPropsModalComponent> = ({ children, onClose, open }) => {
   // Conditions
   // -------------------------------------------------
   if (!open) return null;
+
+  // -------------------------------------------------
+  // Hooks
+  // -------------------------------------------------
+
+  useEffect(() => {
+    const onEsc = (e: any) => {
+      if (e.keyCode === 27) onClose();
+    };
+    window.addEventListener("keydown", onEsc);
+    return () => {
+      window.removeEventListener("keydown", onEsc);
+    };
+  }, []);
 
   // -------------------------------------------------
   // Functions
