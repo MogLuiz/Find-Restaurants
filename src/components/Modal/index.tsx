@@ -13,7 +13,9 @@ interface IPropsModalComponent {
   onClose: () => boolean;
 }
 
-const Modal: React.FC<IPropsModalComponent> = () => {
+const Modal: React.FC<IPropsModalComponent> = ({ children, onClose, open }) => {
+  if (!open) return null;
+
   return (
     <PortalModal>
       <Overlay>
