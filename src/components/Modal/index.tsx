@@ -1,13 +1,24 @@
 // Packages
-import React from "react";
+import React, { ReactNode } from "react";
 
 // React Portal
 import PortalModal from "./Portal";
 
-const Modal: React.FC = () => {
+// Styles
+import { DialogModal, Overlay } from "./styles";
+
+interface IPropsModalComponent {
+  children: ReactNode;
+  open: boolean;
+  onClose: () => boolean;
+}
+
+const Modal: React.FC<IPropsModalComponent> = () => {
   return (
     <PortalModal>
-      <div>x</div>
+      <Overlay>
+        <DialogModal></DialogModal>
+      </Overlay>
     </PortalModal>
   );
 };
