@@ -1,10 +1,16 @@
 // Packages
-import React from "react";
+import React, { useState } from "react";
 
 // Google maps
 import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
 
 export const MapContainer: React.FC<any> = (props) => {
+  // -------------------------------------------------
+  // State
+  // -------------------------------------------------
+
+  const [map, setMap] = useState(null);
+
   // -------------------------------------------------
   // Props
   // -------------------------------------------------
@@ -30,10 +36,17 @@ export const MapContainer: React.FC<any> = (props) => {
     });
   };
 
+  const onMapReady = (_: any, map: any) => {
+    setMap(map);
+    searchNearby(map, map.center);
+  };
+
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
-  return <Map google={google} centerAroundCurrentLocation />;
+  return (
+    <Map google={google} centerAroundCurrentLocation onReady={onMapReady} />
+  );
 };
 
 export default GoogleApiWrapper({
