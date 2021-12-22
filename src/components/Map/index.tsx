@@ -45,7 +45,12 @@ export const MapContainer: React.FC<any> = (props) => {
   // Render
   // -------------------------------------------------
   return (
-    <Map google={google} centerAroundCurrentLocation onReady={onMapReady} />
+    <Map
+      google={google}
+      centerAroundCurrentLocation
+      onReady={onMapReady}
+      onRecenter={onMapReady}
+    />
   );
 };
 
