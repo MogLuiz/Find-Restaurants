@@ -2,10 +2,11 @@
 import React from "react";
 
 // Google maps
-import { GoogleApiWrapper } from "google-maps-react";
+import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
 
-export const MapContainer: React.FC = () => {
-  return <div />;
+export const MapContainer: React.FC<any> = (props) => {
+  const { google } = props;
+  return <Map google={google} centerAroundCurrentLocation />;
 };
 
 export default GoogleApiWrapper({

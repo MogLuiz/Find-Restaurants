@@ -13,6 +13,7 @@ import TextField, { Input } from "@material/react-text-field";
 import MaterialIcon from "@material/react-material-icon";
 import ImageCard from "../../components/ImageCard";
 import RestaurantCard from "../../components/RestaurantCard";
+import Map from "../../components/Map";
 import Modal from "../../components/Modal";
 
 // Styles
@@ -22,7 +23,6 @@ import {
   Search,
   Logo,
   Wrapper,
-  Map,
   CarouselTitle,
 } from "./styles";
 
@@ -92,7 +92,7 @@ const Home: React.FC = () => {
         <RestaurantCard />
       </Container>
       <Map />
-      <Modal open={isOpenedModal} onClose={handleCloseModal} />
+      {/* <Modal open={isOpenedModal} onClose={handleCloseModal} /> */}
     </Wrapper>
   );
 };
