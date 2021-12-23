@@ -9,7 +9,7 @@ export const MapContainer: React.FC<any> = (props) => {
   // State
   // -------------------------------------------------
 
-  const [map, setMap] = useState(null);
+  const [map, setMap] = useState<any>();
 
   // -------------------------------------------------
   // Props
@@ -19,6 +19,23 @@ export const MapContainer: React.FC<any> = (props) => {
   // -------------------------------------------------
   // Functions
   // -------------------------------------------------
+
+  const searchByQuery = (query: any) => {
+    const service = new google.maps.places.PlacesService(map);
+
+    const request = {
+      location: map.center,
+      radius: "200",
+      type: ["restaurant"],
+      query,
+    };
+
+    service.textSearch(request, (results: any, status: any) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        console.log({ results });
+      }
+    });
+  };
 
   const searchNearby = (map: any, center: any) => {
     const service = new google.maps.places.PlacesService(map);
