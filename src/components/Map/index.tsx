@@ -21,7 +21,7 @@ export const MapContainer: React.FC<any> = (props) => {
   // -------------------------------------------------
 
   const searchNearby = (map: any, center: any) => {
-    const service = new google.maps.placesService(map);
+    const service = new google.maps.places.PlacesService(map);
 
     const request = {
       location: center,
@@ -30,7 +30,7 @@ export const MapContainer: React.FC<any> = (props) => {
     };
 
     service.nearbySearch(request, (results: any, status: any) => {
-      if (status === google.maps.places.placesService.OK) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
         console.log({ results });
       }
     });
