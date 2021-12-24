@@ -8,16 +8,20 @@ const INITIAL_STATE = {
 }
 
 const restaurants: Reducer = (state = INITIAL_STATE, action) => {
-    switch (action.type) {
-        case ActionTypes.SET_RESTAURANTS: 
-            break;
 
+    switch (action.type) {
+
+        case ActionTypes.SET_RESTAURANTS: 
+
+            return { ...state, restaurants: action.payload }
+            
         case ActionTypes.SET_SELECTED_RESTAURANT:
-            break;
+
+            return { ...state, restaurantSelected: action.payload }
 
         default:
-            break;
-        
+            return state;
+                
     }
 }
 
