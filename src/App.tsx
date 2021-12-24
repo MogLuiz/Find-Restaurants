@@ -8,11 +8,19 @@ import Home from "./pages/Home";
 import theme from "./styles/theme/theme";
 import { ThemeProvider } from "styled-components";
 
+// Redux Provider
+import { Provider } from "react-redux";
+
+// Redux Store
+import store from "./redux/store";
+
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Home />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Home />
+      </ThemeProvider>
+    </Provider>
   );
 }
 
