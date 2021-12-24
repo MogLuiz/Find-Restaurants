@@ -1,6 +1,12 @@
 // Packages
 import React, { useEffect, useState } from "react";
 
+// Hooks
+import { useDispatch } from "react-redux";
+
+// Action Creators
+import { setRestaurants } from "../../redux/modules/restaurants/actions";
+
 // Google maps
 import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
 
@@ -14,6 +20,8 @@ export const MapContainer: React.FC<any> = ({ google, query }) => {
   // -------------------------------------------------
   // Hooks
   // -------------------------------------------------
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (query) searchByQuery(query);
@@ -36,6 +44,7 @@ export const MapContainer: React.FC<any> = ({ google, query }) => {
     service.textSearch(request, (results: any, status: any) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         console.log({ results });
+        dispatch(setRestaurants(results));
       }
     });
   };
@@ -52,6 +61,7 @@ export const MapContainer: React.FC<any> = ({ google, query }) => {
     service.nearbySearch(request, (results: any, status: any) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         console.log({ results });
+        dispatch(setRestaurants(results));
       }
     });
   };
