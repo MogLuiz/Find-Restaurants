@@ -11,7 +11,7 @@ import { setRestaurants } from "../../redux/modules/restaurants/actions";
 import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
 
 // Types
-import { IMapContainerProps } from "./types";
+import { IMapContainerProps, ISearchResults } from "./types";
 
 export const MapContainer: React.FC<IMapContainerProps> = ({
   google,
@@ -22,8 +22,6 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
   // -------------------------------------------------
 
   const [map, setMap] = useState<any>();
-
-  console.log({ google, query });
 
   // -------------------------------------------------
   // Hooks
@@ -49,9 +47,8 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
       query,
     };
 
-    service.textSearch(request, (results: any, status: any) => {
+    service.textSearch(request, (results: ISearchResults, status: string) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-        console.log({ results });
         dispatch(setRestaurants(results));
       }
     });
@@ -66,9 +63,9 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
       type: ["restaurant"],
     };
 
-    service.nearbySearch(request, (results: any, status: any) => {
+    service.nearbySearch(request, (results: ISearchResults, status: string) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-        console.log({ results });
+        console.log({ results, status });
         dispatch(setRestaurants(results));
       }
     });
