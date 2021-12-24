@@ -10,12 +10,20 @@ import { setRestaurants } from "../../redux/modules/restaurants/actions";
 // Google maps
 import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
 
-export const MapContainer: React.FC<any> = ({ google, query }) => {
+// Types
+import { IMapContainerProps } from "./types";
+
+export const MapContainer: React.FC<IMapContainerProps> = ({
+  google,
+  query,
+}) => {
   // -------------------------------------------------
   // State
   // -------------------------------------------------
 
   const [map, setMap] = useState<any>();
+
+  console.log({ google, query });
 
   // -------------------------------------------------
   // Hooks
@@ -31,7 +39,7 @@ export const MapContainer: React.FC<any> = ({ google, query }) => {
   // Functions
   // -------------------------------------------------
 
-  const searchByQuery = (query: any) => {
+  const searchByQuery = (query: string) => {
     const service = new google.maps.places.PlacesService(map);
 
     const request = {
