@@ -32,6 +32,7 @@ const Home: React.FC = () => {
   // -------------------------------------------------
 
   const [searchInputValue, setSearchInputValue] = useState("");
+  const [query, setQuery] = useState("");
   const [isOpenedModal, setIsOpenedModal] = useState(false);
 
   // -------------------------------------------------
@@ -40,6 +41,10 @@ const Home: React.FC = () => {
 
   const handleCloseModal = () => {
     setIsOpenedModal(!isOpenedModal);
+  };
+
+  const handleKeyPress = (e: any) => {
+    if (e.key === "Enter") setQuery(searchInputValue);
   };
 
   // -------------------------------------------------
@@ -58,6 +63,7 @@ const Home: React.FC = () => {
             <Input
               value={searchInputValue}
               onChange={(e: any) => setSearchInputValue(e.target.value)}
+              onKeyPress={handleKeyPress}
             />
           </TextField>
           <CarouselTitle>Na sua área</CarouselTitle>
@@ -92,7 +98,7 @@ const Home: React.FC = () => {
         <RestaurantCard />
       </Container>
       <Map />
-      {/* <Modal open={isOpenedModal} onClose={handleCloseModal} /> */}
+      <Modal open={isOpenedModal} onClose={handleCloseModal} />
     </Wrapper>
   );
 };
