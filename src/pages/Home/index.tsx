@@ -97,7 +97,7 @@ const Home: React.FC = () => {
         </Search>
         <RestaurantCard />
       </Container>
-      <Map />
+      <Map query={query} />
       <Modal open={isOpenedModal} onClose={handleCloseModal} />
     </Wrapper>
   );

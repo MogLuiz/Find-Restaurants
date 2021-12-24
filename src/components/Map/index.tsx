@@ -1,10 +1,10 @@
 // Packages
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Google maps
 import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
 
-export const MapContainer: React.FC<any> = (props) => {
+export const MapContainer: React.FC<any> = ({ google, query }) => {
   // -------------------------------------------------
   // State
   // -------------------------------------------------
@@ -12,9 +12,12 @@ export const MapContainer: React.FC<any> = (props) => {
   const [map, setMap] = useState<any>();
 
   // -------------------------------------------------
-  // Props
+  // Hooks
   // -------------------------------------------------
-  const { google } = props;
+
+  useEffect(() => {
+    if (query) searchByQuery(query);
+  }, [query]);
 
   // -------------------------------------------------
   // Functions
