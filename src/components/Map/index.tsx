@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 // Hooks
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // Action Creators
 import { setRestaurants } from "../../redux/modules/restaurants/actions";
@@ -27,6 +27,7 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
   // Hooks
   // -------------------------------------------------
 
+  const { restaurants } = useSelector((state: any) => state.restaurants);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -85,7 +86,7 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
       centerAroundCurrentLocation
       onReady={onMapReady}
       onRecenter={onMapReady}
-    />
+    ></Map>
   );
 };
 
