@@ -1,7 +1,7 @@
 // Types
-import { ActionTypes } from "./types"
+import { ActionTypes, IEstablishmentsSearched } from "./types"
 
-export const setRestaurants = (restaurants: any) => {
+export const setRestaurants = (restaurants: IEstablishmentsSearched[]) => {
     console.log(restaurants)
     return {
         type: ActionTypes.SET_RESTAURANTS,

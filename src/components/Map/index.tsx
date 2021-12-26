@@ -11,7 +11,8 @@ import { setRestaurants } from "../../store/modules/restaurants/actions";
 import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
 
 // Types
-import { IMapContainerProps, ISearchResults } from "./types";
+import { IMapContainerProps } from "./types";
+import { IEstablishmentsSearched } from "../../store/modules/restaurants/types";
 
 export const MapContainer: React.FC<IMapContainerProps> = ({
   google,
@@ -48,11 +49,14 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
       query,
     };
 
-    service.textSearch(request, (results: ISearchResults, status: string) => {
-      if (status === google.maps.places.PlacesServiceStatus.OK) {
-        dispatch(setRestaurants(results));
+    service.textSearch(
+      request,
+      (results: IEstablishmentsSearched[], status: string) => {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          dispatch(setRestaurants(results));
+        }
       }
-    });
+    );
   };
 
   const searchNearby = (map: any, center: any) => {
@@ -64,12 +68,15 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
       type: ["restaurant"],
     };
 
-    service.nearbySearch(request, (results: ISearchResults, status: string) => {
-      if (status === google.maps.places.PlacesServiceStatus.OK) {
-        console.log({ results, status });
-        dispatch(setRestaurants(results));
+    service.nearbySearch(
+      request,
+      (results: IEstablishmentsSearched[], status: string) => {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          console.log({ results, status });
+          dispatch(setRestaurants(results));
+        }
       }
-    });
+    );
   };
 
   const onMapReady = (_: any, map: any) => {
