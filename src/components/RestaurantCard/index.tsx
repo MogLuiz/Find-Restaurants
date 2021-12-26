@@ -16,7 +16,7 @@ import {
   RestaurantImage,
 } from "./styles";
 
-const RestaurantCard: React.FC = () => {
+const RestaurantCard: React.FC<any> = ({ restaurant }) => {
   // -------------------------------------------------
   // Render
   // -------------------------------------------------

@@ -3,10 +3,13 @@ import React, { useState, useEffect } from "react";
 
 // Assets
 import logo from "../../assets/logo.svg";
-import restaurants from "../../assets/restaurante-fake.png";
+import restaurant from "../../assets/restaurante-fake.png";
 
 // Utils
 import { carouselSettings } from "./utils";
+
+// Hooks
+import { useSelector } from "react-redux";
 
 // Components
 import TextField, { Input } from "@material/react-text-field";
@@ -27,6 +30,8 @@ import {
 } from "./styles";
 
 const Home: React.FC = () => {
+  const { restaurants } = useSelector((state: any) => state.restaurants);
+
   // -------------------------------------------------
   // States
   // -------------------------------------------------
@@ -69,33 +74,35 @@ const Home: React.FC = () => {
           <CarouselTitle>Na sua área</CarouselTitle>
           <Carousel {...carouselSettings}>
             <ImageCard
-              photo={restaurants}
+              photo={restaurant}
               restaurantName="Nome do restaurante"
             />
             <ImageCard
-              photo={restaurants}
+              photo={restaurant}
               restaurantName="Nome do restaurante"
             />
             <ImageCard
-              photo={restaurants}
+              photo={restaurant}
               restaurantName="Nome do restaurante"
             />
             <ImageCard
-              photo={restaurants}
+              photo={restaurant}
               restaurantName="Nome do restaurante"
             />
             <ImageCard
-              photo={restaurants}
+              photo={restaurant}
               restaurantName="Nome do restaurante"
             />
             <ImageCard
-              photo={restaurants}
+              photo={restaurant}
               restaurantName="Nome do restaurante"
             />
           </Carousel>
           <button onClick={() => setIsOpenedModal(true)}>Abrir Modal</button>
         </Search>
-        <RestaurantCard />
+        {restaurants.map((restaurant: any) => (
+          <RestaurantCard restaurant={restaurant} />
+        ))}
       </Container>
       <Map query={query} />
       <Modal open={isOpenedModal} onClose={handleCloseModal} />
