@@ -12,7 +12,7 @@ import { ThemeProvider } from "styled-components";
 import { Provider } from "react-redux";
 
 // Redux Store
-import store from "./redux/store";
+import store from "./store/store";
 
 function App() {
   return (

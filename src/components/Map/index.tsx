@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 // Action Creators
-import { setRestaurants } from "../../redux/modules/restaurants/actions";
+import { setRestaurants } from "../../store/modules/restaurants/actions";
 
 // Google maps
 import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
