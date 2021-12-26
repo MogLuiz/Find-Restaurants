@@ -1,13 +1,14 @@
 // Types
-import { ActionTypes } from "./types"
 import { Reducer } from "redux"
+import { ActionTypes } from "./types"
+import { IRestaurantState } from "./types"
 
-const INITIAL_STATE = {
+const INITIAL_STATE: IRestaurantState = {
     restaurants: [],
     restaurantSelected: null,
 }
 
-const restaurants: Reducer = (state = INITIAL_STATE, action) => {
+const restaurants: Reducer<IRestaurantState> = (state = INITIAL_STATE, action) => {
 
     switch (action.type) {
 

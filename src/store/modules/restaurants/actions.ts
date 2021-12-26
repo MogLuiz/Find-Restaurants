@@ -2,6 +2,7 @@
 import { ActionTypes } from "./types"
 
 export const setRestaurants = (restaurants: any) => {
+    console.log(restaurants)
     return {
         type: ActionTypes.SET_RESTAURANTS,
         payload: restaurants,
