@@ -2,7 +2,7 @@
 import { createStore } from "redux"
 
 // CombineReducers
-import rootReducer from "./reducers"
+import rootReducer from "./modules/rootReducer"
 
 const store = createStore(rootReducer);
 
