@@ -12,7 +12,11 @@ import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
 
 // Types
 import { IMapContainerProps } from "./types";
-import { IEstablishmentsSearched } from "../../store/modules/restaurants/types";
+import {
+  IEstablishmentsSearched,
+  IRestaurantState,
+} from "../../store/modules/restaurants/types";
+import { IStoreState } from "../../store/store";
 
 export const MapContainer: React.FC<IMapContainerProps> = ({
   google,
@@ -28,9 +32,12 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
   // Hooks
   // -------------------------------------------------
 
-  const { restaurants } = useSelector((state: any) => state.restaurants);
+  const { restaurants } = useSelector<IStoreState, IRestaurantState>(
+    (state) => state.restaurant
+  );
   const dispatch = useDispatch();
 
+  console.log({ restaurants });
   useEffect(() => {
     if (query) searchByQuery(query);
   }, [query]);

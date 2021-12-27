@@ -29,8 +29,14 @@ import {
   CarouselTitle,
 } from "./styles";
 
+// Types
+import { IStoreState } from "../../store/store";
+import { IRestaurantState } from "../../store/modules/restaurants/types";
+
 const Home: React.FC = () => {
-  const { restaurants } = useSelector((state: any) => state.restaurants);
+  const { restaurants } = useSelector<IStoreState, IRestaurantState>(
+    (state) => state.restaurant
+  );
 
   // -------------------------------------------------
   // States
