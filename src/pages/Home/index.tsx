@@ -35,7 +35,7 @@ import { IRestaurantState } from "../../store/modules/restaurants/types";
 
 const Home: React.FC = () => {
   const { restaurants } = useSelector<IStoreState, IRestaurantState>(
-    (state) => state.restaurant
+    (state) => state?.restaurants
   );
 
   // -------------------------------------------------
@@ -106,7 +106,7 @@ const Home: React.FC = () => {
           </Carousel>
           <button onClick={() => setIsOpenedModal(true)}>Abrir Modal</button>
         </Search>
-        {restaurants.map((restaurant: any) => (
+        {restaurants?.map((restaurant: any) => (
           <RestaurantCard restaurant={restaurant} />
         ))}
       </Container>

@@ -7,7 +7,7 @@ import rootReducer from "./modules/rootReducer"
 // Types
 import { IRestaurantState } from "./modules/restaurants/types";
 export interface IStoreState {
-    restaurant: IRestaurantState;
+    restaurants: IRestaurantState;
 }
 
 const store = createStore(rootReducer);

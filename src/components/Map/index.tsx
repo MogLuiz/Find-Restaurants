@@ -32,12 +32,12 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
   // Hooks
   // -------------------------------------------------
 
-  const { restaurants } = useSelector<IStoreState, IRestaurantState>(
-    (state) => state.restaurant
-  );
+  // const { restaurants } = useSelector<IStoreState, IRestaurantState>(
+  //   (state) => state.restaurant
+  // );
   const dispatch = useDispatch();
 
-  console.log({ restaurants });
+  // console.log({ restaurants });
   useEffect(() => {
     if (query) searchByQuery(query);
   }, [query]);
