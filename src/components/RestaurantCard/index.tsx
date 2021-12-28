@@ -36,7 +36,9 @@ const RestaurantCard: React.FC<IRestaurantCardProps> = ({ restaurant }) => {
           rating={restaurant.rating}
           starRatedColor="#FFA72D"
         />
-        <RestaurantAdress>{restaurant.vicinity}</RestaurantAdress>
+        <RestaurantAdress>
+          {restaurant.vicinity || restaurant.formatted_address}
+        </RestaurantAdress>
       </RestaurantInfo>
       <RestaurantImage
         src={restaurant.photos ? restaurant?.photos[0]?.getUrl() : restaurants}

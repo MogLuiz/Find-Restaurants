@@ -21,6 +21,7 @@ export interface IEstablishmentsSearched {
     types: string[];
     user_ratings_total: number;
     vicinity: string;
+    formatted_address?: string;
 }
 
 

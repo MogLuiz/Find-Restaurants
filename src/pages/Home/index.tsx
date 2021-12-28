@@ -31,7 +31,10 @@ import {
 
 // Types
 import { IStoreState } from "../../store/store";
-import { IRestaurantState } from "../../store/modules/restaurants/types";
+import {
+  IEstablishmentsSearched,
+  IRestaurantState,
+} from "../../store/modules/restaurants/types";
 
 const Home: React.FC = () => {
   const { restaurants } = useSelector<IStoreState, IRestaurantState>(
@@ -79,13 +82,13 @@ const Home: React.FC = () => {
           </TextField>
           <CarouselTitle>Na sua área</CarouselTitle>
           <Carousel {...carouselSettings}>
-            {restaurants?.map((restaurant: any) => (
+            {restaurants?.map((restaurant: IEstablishmentsSearched) => (
               <ImageCard key={restaurant.place_id} restaurant={restaurant} />
             ))}
           </Carousel>
         </Search>
-        {restaurants?.map((restaurant: any) => (
-          <RestaurantCard restaurant={restaurant} />
+        {restaurants?.map((restaurant: IEstablishmentsSearched) => (
+          <RestaurantCard restaurant={restaurant} key={restaurant.place_id} />
         ))}
       </Container>
       <Map query={query} />
