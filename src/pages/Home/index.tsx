@@ -80,11 +80,7 @@ const Home: React.FC = () => {
           <CarouselTitle>Na sua área</CarouselTitle>
           <Carousel {...carouselSettings}>
             {restaurants?.map((restaurant: any) => (
-              <ImageCard
-                key={restaurant.place_id}
-                photo={restaurant}
-                restaurantName={restaurant.vicinity}
-              />
+              <ImageCard key={restaurant.place_id} restaurant={restaurant} />
             ))}
           </Carousel>
         </Search>

@@ -4,20 +4,24 @@ import React from "react";
 // Assets
 import restaurants from "../../assets/restaurante-fake.png";
 
+// Types
+import { IEstablishmentsSearched } from "../../store/modules/restaurants/types";
+
 // Styles
 import { Card, Title } from "./styles";
 
 interface IImageCardProps {
-  photo: any;
-  restaurantName: string;
+  restaurant: IEstablishmentsSearched;
 }
 
-const ImageCard: React.FC<IImageCardProps> = ({ photo, restaurantName }) => (
+const ImageCard: React.FC<IImageCardProps> = ({ restaurant }) => (
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
-  <Card photo={photo.photos ? photo?.photos[0]?.getUrl() : restaurants}>
-    <Title>{restaurantName}</Title>
+  <Card
+    photo={restaurant.photos ? restaurant?.photos[0]?.getUrl() : restaurants}
+  >
+    <Title>{restaurant.name}</Title>
   </Card>
 );
 
