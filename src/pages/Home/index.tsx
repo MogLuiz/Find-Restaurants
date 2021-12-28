@@ -65,7 +65,7 @@ const Home: React.FC = () => {
     <Wrapper>
       <Container>
         <Search>
-          <Logo src={logo} alt="Logo da aplicação" />
+          {/* <Logo src={logo} alt="Logo da aplicação" /> */}
           <TextField
             label="Pesquisar Restaurantes"
             outlined
@@ -79,32 +79,14 @@ const Home: React.FC = () => {
           </TextField>
           <CarouselTitle>Na sua área</CarouselTitle>
           <Carousel {...carouselSettings}>
-            <ImageCard
-              photo={restaurant}
-              restaurantName="Nome do restaurante"
-            />
-            <ImageCard
-              photo={restaurant}
-              restaurantName="Nome do restaurante"
-            />
-            <ImageCard
-              photo={restaurant}
-              restaurantName="Nome do restaurante"
-            />
-            <ImageCard
-              photo={restaurant}
-              restaurantName="Nome do restaurante"
-            />
-            <ImageCard
-              photo={restaurant}
-              restaurantName="Nome do restaurante"
-            />
-            <ImageCard
-              photo={restaurant}
-              restaurantName="Nome do restaurante"
-            />
+            {restaurants?.map((restaurant: any) => (
+              <ImageCard
+                key={restaurant.place_id}
+                photo={restaurant}
+                restaurantName={restaurant.vicinity}
+              />
+            ))}
           </Carousel>
-          <button onClick={() => setIsOpenedModal(true)}>Abrir Modal</button>
         </Search>
         {restaurants?.map((restaurant: any) => (
           <RestaurantCard restaurant={restaurant} />
