@@ -33,12 +33,15 @@ const RestaurantCard: React.FC<IRestaurantCardProps> = ({ restaurant }) => {
         <RestaurantName>{restaurant.name}</RestaurantName>
         <StarRating
           starDimension="20px"
-          rating={4.5}
+          rating={restaurant.rating}
           starRatedColor="#FFA72D"
         />
-        <RestaurantAdress>Rua Espirito santo, 116</RestaurantAdress>
+        <RestaurantAdress>{restaurant.vicinity}</RestaurantAdress>
       </RestaurantInfo>
-      <RestaurantImage src={restaurants} alt="Foto do Restaurante" />
+      <RestaurantImage
+        src={restaurant.photos ? restaurant?.photos[0]?.getUrl() : restaurants}
+        alt="Foto do Restaurante"
+      />
     </RestaurantContainer>
   );
 };
