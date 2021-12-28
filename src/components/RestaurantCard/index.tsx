@@ -4,8 +4,11 @@ import React from "react";
 // Assets
 import restaurants from "../../assets/restaurante-fake.png";
 
-// // Components
+// Components
 import StarRating from "react-star-ratings";
+
+// Types
+import { IEstablishmentsSearched } from "../../store/modules/restaurants/types";
 
 // Styles
 import {
@@ -16,14 +19,18 @@ import {
   RestaurantImage,
 } from "./styles";
 
-const RestaurantCard: React.FC<any> = ({ restaurant }) => {
+interface IRestaurantCardProps {
+  restaurant: IEstablishmentsSearched;
+}
+
+const RestaurantCard: React.FC<IRestaurantCardProps> = ({ restaurant }) => {
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
   return (
     <RestaurantContainer>
       <RestaurantInfo>
-        <RestaurantName>Nome do Restaurante</RestaurantName>
+        <RestaurantName>{restaurant.name}</RestaurantName>
         <StarRating
           starDimension="20px"
           rating={4.5}

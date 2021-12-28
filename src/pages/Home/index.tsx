@@ -35,7 +35,7 @@ import { IRestaurantState } from "../../store/modules/restaurants/types";
 
 const Home: React.FC = () => {
   const { restaurants } = useSelector<IStoreState, IRestaurantState>(
-    (state) => state?.restaurants
+    (state) => state.restaurants
   );
 
   // -------------------------------------------------
