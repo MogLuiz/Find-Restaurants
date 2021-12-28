@@ -7,8 +7,8 @@ interface ICardStyledComponent {
 export const Card = styled.div<ICardStyledComponent>`
     padding: 5px;
 
-    height: 90px!important;
-    width: 90px!important;
+    height: 90px;
+    width: 90px;
   
     border-radius: 6px;
 
@@ -16,14 +16,6 @@ export const Card = styled.div<ICardStyledComponent>`
     background-size: cover;
 `
 
-// export const CardImage = styled.img`
-    
-
-//     height: 90px;
-//     height: 90px;
-
-//     border-radius: 6px;
-// `
 
 export const Title = styled.span`
     font-family: ${props => props.theme.fonts.regular};

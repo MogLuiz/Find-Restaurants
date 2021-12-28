@@ -48,8 +48,8 @@ export const RestaurantAdress = styled.span`
 `
 
 export const RestaurantImage = styled.img`
-    width: 100px!important;
-    height: 100px!important;
+    width: 100px;
+    height: 100px;
 
     border-radius: 6px;
 
