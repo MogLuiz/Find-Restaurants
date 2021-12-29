@@ -21,6 +21,7 @@ import { IStoreState } from "../../store/store";
 export const MapContainer: React.FC<IMapContainerProps> = ({
   google,
   query,
+  placeId,
 }) => {
   // -------------------------------------------------
   // State
@@ -40,6 +41,10 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
   useEffect(() => {
     if (query) searchByQuery(query);
   }, [query]);
+
+  useEffect(() => {
+    if (placeId) getRestaurantById(placeId);
+  }, [placeId]);
 
   // -------------------------------------------------
   // Functions
