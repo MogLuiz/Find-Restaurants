@@ -42,9 +42,11 @@ export const Map = styled.div`
 `
 
 export const Carousel = styled(Slider)`
-    .slick-Slide {
-        margin-right: 16px;
+    .slick-slide {
+        margin-right: 20px;
     }
+
+    
 `
 
 export const CarouselTitle = styled.h1`

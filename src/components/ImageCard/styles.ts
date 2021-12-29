@@ -8,7 +8,8 @@ export const Card = styled.div<ICardStyledComponent>`
     padding: 5px;
 
     height: 90px;
-    width: 90px;
+    min-width: 90px;
+    max-width: 90px;
   
     border-radius: 6px;
 
