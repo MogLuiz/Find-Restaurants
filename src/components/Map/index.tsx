@@ -32,12 +32,11 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
   // Hooks
   // -------------------------------------------------
 
-  // const { restaurants } = useSelector<IStoreState, IRestaurantState>(
-  //   (state) => state.restaurant
-  // );
+  const { restaurants } = useSelector<IStoreState, IRestaurantState>(
+    (state) => state.restaurants
+  );
   const dispatch = useDispatch();
 
-  // console.log({ restaurants });
   useEffect(() => {
     if (query) searchByQuery(query);
   }, [query]);
@@ -45,6 +44,26 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
   // -------------------------------------------------
   // Functions
   // -------------------------------------------------
+
+  const getRestaurantById = (placeId: string) => {
+    const service = new google.maps.places.PlacesService(map);
+
+    const request = {
+      placeId,
+      fields: [
+        "name",
+        "opening_hours",
+        "formatted_address",
+        "formatted_phone_number",
+      ],
+    };
+
+    service.getDetails(request, (place: any, status: string) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        dispatch(setRestaurants(place));
+      }
+    });
+  };
 
   const searchByQuery = (query: string) => {
     const service = new google.maps.places.PlacesService(map);
