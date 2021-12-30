@@ -97,7 +97,7 @@ const Home: React.FC = () => {
           />
         ))}
       </Container>
-      <Map query={query} />
+      <Map query={query} placeId={placeId} />
       <Modal open={isOpenedModal} onClose={handleCloseModal} />
     </Wrapper>
   );
