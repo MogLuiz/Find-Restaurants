@@ -36,6 +36,8 @@ import {
   IRestaurantState,
 } from "../../store/modules/restaurants/types";
 
+type placeIdState = string | undefined;
+
 const Home: React.FC = () => {
   const { restaurants, restaurantSelected } = useSelector<
     IStoreState,
@@ -49,7 +51,7 @@ const Home: React.FC = () => {
   const [searchInputValue, setSearchInputValue] = useState("");
   const [query, setQuery] = useState("");
   const [isOpenedModal, setIsOpenedModal] = useState(false);
-  const [placeId, setPlaceId] = useState("");
+  const [placeId, setPlaceId] = useState<placeIdState>(undefined);
 
   // -------------------------------------------------
   // Functions

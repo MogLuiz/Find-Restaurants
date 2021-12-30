@@ -21,15 +21,18 @@ import {
 
 interface IRestaurantCardProps {
   restaurant: IEstablishmentsSearched;
-  onClick?: () => void;
+  onClick: any;
 }
 
-const RestaurantCard: React.FC<IRestaurantCardProps> = ({ restaurant }) => {
+const RestaurantCard: React.FC<IRestaurantCardProps> = ({
+  restaurant,
+  onClick,
+}) => {
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
   return (
-    <RestaurantContainer>
+    <RestaurantContainer onClick={onClick}>
       <RestaurantInfo>
         <RestaurantName>{restaurant.name}</RestaurantName>
         <StarRating
