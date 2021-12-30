@@ -11,7 +11,7 @@ import { setRestaurants } from "../../store/modules/restaurants/actions";
 import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
 
 // Types
-import { IMapContainerProps } from "./types";
+import { IMapContainerProps, IMapState } from "./types";
 import {
   IEstablishmentsSearched,
   IRestaurantState,
@@ -22,21 +22,22 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
   google,
   query,
   placeId,
+  ...props
 }) => {
   // -------------------------------------------------
   // State
   // -------------------------------------------------
 
-  const [map, setMap] = useState<any>();
+  const [map, setMap] = useState<IMapState>();
 
   // -------------------------------------------------
   // Hooks
   // -------------------------------------------------
+  const dispatch = useDispatch();
 
   const { restaurants } = useSelector<IStoreState, IRestaurantState>(
     (state) => state.restaurants
   );
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (query) searchByQuery(query);
@@ -124,7 +125,8 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
       centerAroundCurrentLocation
       onReady={onMapReady}
       onRecenter={onMapReady}
-    ></Map>
+      {...props}
+    />
   );
 };
 

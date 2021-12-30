@@ -37,9 +37,10 @@ import {
 } from "../../store/modules/restaurants/types";
 
 const Home: React.FC = () => {
-  const { restaurants } = useSelector<IStoreState, IRestaurantState>(
-    (state) => state.restaurants
-  );
+  const { restaurants, restaurantSelected } = useSelector<
+    IStoreState,
+    IRestaurantState
+  >((state) => state.restaurants);
 
   // -------------------------------------------------
   // States
@@ -48,6 +49,7 @@ const Home: React.FC = () => {
   const [searchInputValue, setSearchInputValue] = useState("");
   const [query, setQuery] = useState("");
   const [isOpenedModal, setIsOpenedModal] = useState(false);
+  const [placeId, setPlaceId] = useState("");
 
   // -------------------------------------------------
   // Functions
@@ -88,7 +90,11 @@ const Home: React.FC = () => {
           </Carousel>
         </Search>
         {restaurants?.map((restaurant: IEstablishmentsSearched) => (
-          <RestaurantCard restaurant={restaurant} key={restaurant.place_id} />
+          <RestaurantCard
+            restaurant={restaurant}
+            key={restaurant.place_id}
+            onClick={() => setPlaceId(restaurant.place_id)}
+          />
         ))}
       </Container>
       <Map query={query} />
