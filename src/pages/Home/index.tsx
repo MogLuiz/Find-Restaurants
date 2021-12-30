@@ -59,6 +59,11 @@ const Home: React.FC = () => {
     setIsOpenedModal(!isOpenedModal);
   };
 
+  const handleOpenModal = (placeId: string) => {
+    setPlaceId(placeId);
+    setIsOpenedModal(true);
+  };
+
   const handleKeyPress = (e: any) => {
     if (e.key === "Enter") setQuery(searchInputValue);
   };
@@ -93,7 +98,7 @@ const Home: React.FC = () => {
           <RestaurantCard
             restaurant={restaurant}
             key={restaurant.place_id}
-            onClick={() => setPlaceId(restaurant.place_id)}
+            onClick={() => handleOpenModal(restaurant.place_id)}
           />
         ))}
       </Container>
