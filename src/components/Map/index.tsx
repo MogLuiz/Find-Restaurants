@@ -71,6 +71,26 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
     });
   };
 
+  const getRestaurantForQuery = (placeId: string) => {
+    const service = new google.maps.places.PlacesService(map);
+
+    const request = {
+      placeId,
+      fields: [
+        "name",
+        "opening_hours",
+        "formatted_address",
+        "formatted_phone_number",
+      ],
+    };
+
+    service.getDetails(request, (place: any, status: string) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        dispatch(setRestaurants(place));
+      }
+    });
+  };
+
   const searchByQuery = (query: string) => {
     const service = new google.maps.places.PlacesService(map);
 
