@@ -5,7 +5,10 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 // Action Creators
-import { setRestaurants } from "../../store/modules/restaurants/actions";
+import {
+  setRestaurants,
+  setSelectedRestaurant,
+} from "../../store/modules/restaurants/actions";
 
 // Google maps
 import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
@@ -66,7 +69,7 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
 
     service.getDetails(request, (place: any, status: string) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-        dispatch(setRestaurants(place));
+        dispatch(setSelectedRestaurant(place));
       }
     });
   };
