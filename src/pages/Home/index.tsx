@@ -111,6 +111,11 @@ const Home: React.FC = () => {
           {restaurantSelected?.formatted_phone_number}
         </ModalContent>
         <ModalContent>{restaurantSelected?.formatted_address}</ModalContent>
+        <ModalContent>
+          {restaurantSelected?.opening_hours
+            ? "Aberto agora :D"
+            : "Fechado no momento :("}
+        </ModalContent>
       </Modal>
     </Wrapper>
   );
