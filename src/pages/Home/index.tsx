@@ -27,6 +27,7 @@ import {
   Logo,
   Wrapper,
   CarouselTitle,
+  ModalTitle,
 } from "./styles";
 
 // Types
@@ -104,7 +105,7 @@ const Home: React.FC = () => {
       </Container>
       <Map query={query} placeId={placeId} />
       <Modal open={isOpenedModal} onClose={handleCloseModal}>
-        <p>{restaurantSelected?.name}</p>
+        <ModalTitle>{restaurantSelected?.name}</ModalTitle>
         <p>{restaurantSelected?.formatted_phone_number}</p>
         <p>{restaurantSelected?.formatted_address}</p>
       </Modal>
