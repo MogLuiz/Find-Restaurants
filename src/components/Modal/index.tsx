@@ -54,7 +54,7 @@ const Modal: React.FC<IPropsModalComponent> = ({ children, onClose, open }) => {
   return (
     <PortalModal>
       <Overlay onClick={handleOverlayClick}>
-        <DialogModal onClick={handleDialogModalClick}></DialogModal>
+        <DialogModal onClick={handleDialogModalClick}>{children}</DialogModal>
       </Overlay>
     </PortalModal>
   );

@@ -103,7 +103,11 @@ const Home: React.FC = () => {
         ))}
       </Container>
       <Map query={query} placeId={placeId} />
-      <Modal open={isOpenedModal} onClose={handleCloseModal} />
+      <Modal open={isOpenedModal} onClose={handleCloseModal}>
+        <p>{restaurantSelected?.name}</p>
+        <p>{restaurantSelected?.formatted_phone_number}</p>
+        <p>{restaurantSelected?.formatted_address}</p>
+      </Modal>
     </Wrapper>
   );
 };

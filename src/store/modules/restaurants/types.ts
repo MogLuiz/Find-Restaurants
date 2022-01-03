@@ -14,6 +14,7 @@ export interface IEstablishmentsSearched {
     opening_hours: any;
     photos: any;
     place_id: string;
+    formatted_phone_number?: string; 
     plus_code: { compound_code: string;  global_code: string;}
     rating: number;
     reference: string;
