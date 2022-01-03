@@ -73,3 +73,14 @@ export const ModalTitle = styled.p `
 
     color: ${props => props.theme.colors.text}
 `
+
+export const ModalContent = styled.p`
+    margin-bottom: 10px;
+
+    font-family: ${props => props.theme.fonts.regular};
+    font-weight: normal;
+    line-height: 19px;
+    font-size: 16px;
+
+    color: ${props => props.theme.colors.text}
+`
