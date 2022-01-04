@@ -2,7 +2,7 @@
 // Card Component
 // -------------------------------------------------
 
-export { default as Card } from "./ImageCard"
+export { default as ImageCard } from "./ImageCard"
 
 // -------------------------------------------------
 // Loader Component

@@ -14,11 +14,14 @@ import { useSelector } from "react-redux";
 // Components
 import TextField, { Input } from "@material/react-text-field";
 import MaterialIcon from "@material/react-material-icon";
-import ImageCard from "../../components/ImageCard";
-import RestaurantCard from "../../components/RestaurantCard";
-import Map from "../../components/Map";
-import Modal from "../../components/Modal";
-import Loader from "../../components/Loader";
+import {
+  ImageCard,
+  Loader,
+  Map,
+  Modal,
+  RestaurantCard,
+  Skeleton,
+} from "../../components";
 
 // Styles
 import {
