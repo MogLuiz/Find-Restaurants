@@ -100,7 +100,12 @@ const Home: React.FC = () => {
                 {restaurants?.map((restaurant: IEstablishmentsSearched) => (
                   <ImageCard
                     key={restaurant.place_id}
-                    restaurant={restaurant}
+                    image={
+                      restaurant.photos
+                        ? restaurant?.photos[0]?.getUrl()
+                        : restaurants
+                    }
+                    name={restaurant.name}
                   />
                 ))}
               </Carousel>

@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 // Assets
 import restaurants from "../../assets/restaurante-fake.png";
 
+// Components
+import { Skeleton } from "..";
+
 // Types
 import { IEstablishmentsSearched } from "../../store/modules/restaurants/types";
 
@@ -11,10 +14,11 @@ import { IEstablishmentsSearched } from "../../store/modules/restaurants/types";
 import { Card, Title } from "./styles";
 
 interface IImageCardProps {
-  restaurant: IEstablishmentsSearched;
+  name: string;
+  image: string;
 }
 
-const ImageCard: React.FC<IImageCardProps> = ({ restaurant }) => {
+const ImageCard: React.FC<IImageCardProps> = ({ name, image }) => {
   // -------------------------------------------------
   // State
   // -------------------------------------------------
@@ -27,19 +31,23 @@ const ImageCard: React.FC<IImageCardProps> = ({ restaurant }) => {
 
   useEffect(() => {
     const imageLoader = new Image();
-    imageLoader.src = restaurant?.photos[0];
+    imageLoader.src = image;
     imageLoader.onload = () => setIsImageLoaded(true);
-  }, [restaurant.photos[0]]);
+  }, [image]);
 
   // -------------------------------------------------
   // Render
   // -------------------------------------------------
   return (
-    <Card
-      photo={restaurant.photos ? restaurant?.photos[0]?.getUrl() : restaurants}
-    >
-      <Title>{restaurant.name}</Title>
-    </Card>
+    <>
+      {isImageLoaded ? (
+        <Card photo={image}>
+          <Title>{name}</Title>
+        </Card>
+      ) : (
+        <Skeleton height="90px" width="90px" />
+      )}
+    </>
   );
 };
 
