@@ -1,5 +1,5 @@
 // Packages
-import React from "react";
+import React, { useState } from "react";
 
 // Assets
 import restaurants from "../../assets/restaurante-fake.png";
@@ -29,6 +29,12 @@ const RestaurantCard: React.FC<IRestaurantCardProps> = ({
   onClick,
 }) => {
   // -------------------------------------------------
+  // States
+  // -------------------------------------------------
+
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  // -------------------------------------------------
   // Render
   // -------------------------------------------------
   return (
@@ -47,6 +53,7 @@ const RestaurantCard: React.FC<IRestaurantCardProps> = ({
       <RestaurantImage
         src={restaurant.photos ? restaurant?.photos[0]?.getUrl() : restaurants}
         alt="Foto do Restaurante"
+        onLoad={() => setIsImageLoaded(true)}
       />
     </RestaurantContainer>
   );
