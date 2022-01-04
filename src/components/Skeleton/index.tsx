@@ -1,9 +1,14 @@
 import React from "react";
 
-// import { Container } from './styles';
+import { LoadingSkeleton } from "./styles";
 
-const Skeleton: React.FC = () => {
-  return <div />;
-};
+interface ISkeletonComponentProps {
+  width: string;
+  height: string;
+}
+
+const Skeleton: React.FC<ISkeletonComponentProps> = ({ height, width }) => (
+  <LoadingSkeleton height={width} width={width} />
+);
 
 export default Skeleton;
