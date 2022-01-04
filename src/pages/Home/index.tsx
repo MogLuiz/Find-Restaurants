@@ -116,16 +116,20 @@ const Home: React.FC = () => {
       </Container>
       <Map query={query} placeId={placeId} />
       <Modal open={isOpenedModal} onClose={handleCloseModal}>
-        <ModalTitle>{restaurantSelected?.name}</ModalTitle>
-        <ModalContent>
-          {restaurantSelected?.formatted_phone_number}
-        </ModalContent>
-        <ModalContent>{restaurantSelected?.formatted_address}</ModalContent>
-        <ModalContent>
-          {restaurantSelected?.opening_hours
-            ? "Aberto agora :D"
-            : "Fechado no momento :("}
-        </ModalContent>
+        {restaurantSelected && (
+          <>
+            <ModalTitle>{restaurantSelected?.name}</ModalTitle>
+            <ModalContent>
+              {restaurantSelected?.formatted_phone_number}
+            </ModalContent>
+            <ModalContent>{restaurantSelected?.formatted_address}</ModalContent>
+            <ModalContent>
+              {restaurantSelected?.opening_hours
+                ? "Aberto agora :D"
+                : "Fechado no momento :("}
+            </ModalContent>
+          </>
+        )}
       </Modal>
     </Wrapper>
   );
