@@ -1,9 +1,8 @@
+// Packages
 import styled, { keyframes } from "styled-components";
 
-interface ILoadingSkeletonStyleProps {
-    width: string;
-    height: string;
-}
+// Types
+import { ISkeletonComponentProps } from "./shared/types";
 
 const KeyFrameLoading = keyframes `
     0% {
@@ -14,7 +13,7 @@ const KeyFrameLoading = keyframes `
     }
 `
 
-export const LoadingSkeleton = styled.div<ILoadingSkeletonStyleProps>`
+export const LoadingSkeleton = styled.div<ISkeletonComponentProps>`
     background-color: gray;
 
     border-radius: 6px;

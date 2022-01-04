@@ -1,11 +1,11 @@
+// Packages
 import React from "react";
 
-import { LoadingSkeleton } from "./styles";
+// Types
+import { ISkeletonComponentProps } from "./shared/types";
 
-interface ISkeletonComponentProps {
-  width: string;
-  height: string;
-}
+// Styles
+import { LoadingSkeleton } from "./styles";
 
 const Skeleton: React.FC<ISkeletonComponentProps> = ({ height, width }) => (
   <LoadingSkeleton height={width} width={width} />
