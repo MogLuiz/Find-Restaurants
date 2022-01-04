@@ -8,7 +8,7 @@ export const setRestaurants = (restaurants: IEstablishmentsSearched[]) => {
     }
 }
 
-export const setSelectedRestaurant = (selectedRestaurant: IEstablishmentsSearched) => {
+export const setSelectedRestaurant = (selectedRestaurant: IEstablishmentsSearched | null) => {
     return {
         type: ActionTypes.SET_SELECTED_RESTAURANT,
         payload: selectedRestaurant,

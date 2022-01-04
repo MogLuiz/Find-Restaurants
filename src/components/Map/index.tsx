@@ -57,6 +57,8 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
   const getRestaurantById = (placeId: string) => {
     const service = new google.maps.places.PlacesService(map);
 
+    dispatch(setSelectedRestaurant(null));
+
     const request = {
       placeId,
       fields: [
@@ -77,6 +79,8 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
   const searchByQuery = (query: string) => {
     const service = new google.maps.places.PlacesService(map);
 
+    dispatch(setRestaurants([]));
+
     const request = {
       location: map.center,
       radius: "200",
@@ -96,6 +100,8 @@ export const MapContainer: React.FC<IMapContainerProps> = ({
 
   const searchNearby = (map: any, center: any) => {
     const service = new google.maps.places.PlacesService(map);
+
+    dispatch(setRestaurants([]));
 
     const request = {
       location: center,
