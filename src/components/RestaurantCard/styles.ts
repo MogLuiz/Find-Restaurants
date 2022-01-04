@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const RestaurantContainer = styled.div`
     display: flex;
     justify-content: space-between;
@@ -47,7 +48,13 @@ export const RestaurantAdress = styled.span`
     color: ${props => props.theme.colors.text};
 `
 
-export const RestaurantImage = styled.img`
+interface IRestaurantImageProps {
+    imageLoaded: boolean;
+}
+
+export const RestaurantImage = styled.img<IRestaurantImageProps>`
+    display: ${props => props.imageLoaded ? "block" : "none"};
+
     width: 100px!important;
     min-width: 100px!important;
     height: 100px!important;

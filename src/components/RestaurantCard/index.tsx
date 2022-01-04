@@ -6,6 +6,7 @@ import restaurants from "../../assets/restaurante-fake.png";
 
 // Components
 import StarRating from "react-star-ratings";
+import { Skeleton } from "..";
 
 // Types
 import { IEstablishmentsSearched } from "../../store/modules/restaurants/types";
@@ -51,10 +52,12 @@ const RestaurantCard: React.FC<IRestaurantCardProps> = ({
         </RestaurantAdress>
       </RestaurantInfo>
       <RestaurantImage
+        imageLoaded={isImageLoaded}
         src={restaurant.photos ? restaurant?.photos[0]?.getUrl() : restaurants}
         alt="Foto do Restaurante"
         onLoad={() => setIsImageLoaded(true)}
       />
+      {!isImageLoaded && <Skeleton height="100px" width="100px" />}
     </RestaurantContainer>
   );
 };
