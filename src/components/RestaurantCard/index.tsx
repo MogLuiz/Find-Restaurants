@@ -22,7 +22,7 @@ import {
 
 interface IRestaurantCardProps {
   restaurant: IEstablishmentsSearched;
-  onClick: any;
+  onClick: () => void;
 }
 
 const RestaurantCard: React.FC<IRestaurantCardProps> = ({
