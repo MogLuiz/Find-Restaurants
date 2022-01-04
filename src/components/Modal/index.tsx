@@ -1,6 +1,12 @@
 // Packages
 import React, { ReactNode, useEffect } from "react";
 
+// Hooks
+import { useDispatch } from "react-redux";
+
+// Actions
+import { setSelectedRestaurant } from "../../store/modules/restaurants/actions";
+
 // React Portal
 import PortalModal from "./Portal";
 
@@ -18,9 +24,12 @@ const Modal: React.FC<IPropsModalComponent> = ({ children, onClose, open }) => {
   // Hooks
   // -------------------------------------------------
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const onEsc = (event: any) => {
       if (event.keyCode === 27 && open) {
+        dispatch(setSelectedRestaurant(null));
         onClose();
       }
     };
@@ -41,6 +50,7 @@ const Modal: React.FC<IPropsModalComponent> = ({ children, onClose, open }) => {
   // -------------------------------------------------
 
   const handleOverlayClick = () => {
+    dispatch(setSelectedRestaurant(null));
     onClose();
   };
 
