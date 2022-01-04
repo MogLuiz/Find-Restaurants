@@ -119,7 +119,7 @@ const Home: React.FC = () => {
       </Container>
       <Map query={query} placeId={placeId} />
       <Modal open={isOpenedModal} onClose={handleCloseModal}>
-        {restaurantSelected && (
+        {restaurantSelected ? (
           <>
             <ModalTitle>{restaurantSelected?.name}</ModalTitle>
             <ModalContent>
@@ -131,6 +131,13 @@ const Home: React.FC = () => {
                 ? "Aberto agora :D"
                 : "Fechado no momento :("}
             </ModalContent>
+          </>
+        ) : (
+          <>
+            <Skeleton width="10px" height="10px" />
+            <Skeleton width="10px" height="10px" />
+            <Skeleton width="10px" height="10px" />
+            <Skeleton width="10px" height="10px" />
           </>
         )}
       </Modal>
