@@ -18,6 +18,7 @@ import ImageCard from "../../components/ImageCard";
 import RestaurantCard from "../../components/RestaurantCard";
 import Map from "../../components/Map";
 import Modal from "../../components/Modal";
+import Loader from "../../components/Loader";
 
 // Styles
 import {
@@ -89,12 +90,21 @@ const Home: React.FC = () => {
               onKeyPress={handleKeyPress}
             />
           </TextField>
-          <CarouselTitle>Na sua área</CarouselTitle>
-          <Carousel {...carouselSettings}>
-            {restaurants?.map((restaurant: IEstablishmentsSearched) => (
-              <ImageCard key={restaurant.place_id} restaurant={restaurant} />
-            ))}
-          </Carousel>
+          {restaurants.length > 0 ? (
+            <>
+              <CarouselTitle>Na sua área</CarouselTitle>
+              <Carousel {...carouselSettings}>
+                {restaurants?.map((restaurant: IEstablishmentsSearched) => (
+                  <ImageCard
+                    key={restaurant.place_id}
+                    restaurant={restaurant}
+                  />
+                ))}
+              </Carousel>
+            </>
+          ) : (
+            <Loader />
+          )}
         </Search>
         {restaurants?.map((restaurant: IEstablishmentsSearched) => (
           <RestaurantCard
