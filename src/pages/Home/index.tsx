@@ -105,6 +105,7 @@ const Home: React.FC = () => {
                         ? restaurant?.photos[0]?.getUrl()
                         : restaurants
                     }
+                    restaurant={restaurant}
                     name={restaurant.name}
                   />
                 ))}

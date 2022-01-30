@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 // Assets
-import restaurants from "../../assets/restaurante-fake.png";
+import defautRestaurantImage from "../../assets/restaurante-fake.png";
 
 // Components
 import { Skeleton } from "..";
@@ -16,9 +16,10 @@ import { Card, Title } from "./styles";
 interface IImageCardProps {
   name: string;
   image: string;
+  restaurant: any;
 }
 
-const ImageCard: React.FC<IImageCardProps> = ({ name, image }) => {
+const ImageCard: React.FC<IImageCardProps> = ({ name, image, restaurant }) => {
   // -------------------------------------------------
   // State
   // -------------------------------------------------
@@ -30,6 +31,10 @@ const ImageCard: React.FC<IImageCardProps> = ({ name, image }) => {
   // -------------------------------------------------
 
   useEffect(() => {
+    if (!restaurant.photos) {
+      setIsImageLoaded(true);
+      return;
+    }
     const imageLoader = new Image();
     imageLoader.src = image;
     imageLoader.onload = () => setIsImageLoaded(true);
@@ -41,7 +46,7 @@ const ImageCard: React.FC<IImageCardProps> = ({ name, image }) => {
   return (
     <>
       {isImageLoaded ? (
-        <Card photo={image}>
+        <Card photo={restaurant.photos ? image : defautRestaurantImage}>
           <Title>{name}</Title>
         </Card>
       ) : (
