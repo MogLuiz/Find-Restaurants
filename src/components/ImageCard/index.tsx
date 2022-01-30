@@ -16,7 +16,7 @@ import { Card, Title } from "./styles";
 interface IImageCardProps {
   name: string;
   image: string;
-  restaurant: any;
+  restaurant: IEstablishmentsSearched;
 }
 
 const ImageCard: React.FC<IImageCardProps> = ({ name, image, restaurant }) => {
