@@ -15,6 +15,13 @@
   <a href="#memo-license">License</a>
 </p>
 
+## :dart: Objetivo
+
+<p>
+   Sistema web de busca de restaurantes baseado na localização mais próxima do usuário via browser. O sistema traz os restaurantes mais próximos do usuário e        informações tais como localização, avaliação, horario de atendimento e fotos. <br/>
+   O sistema é integrado com a API do Google.
+</p>
+
 ## :hammer_and_wrench: Ferramentas
 
 
