@@ -11,9 +11,8 @@
 <p align="center">
    <a href="#dart-objetivo">Objetivo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#hammer_and_wrench-ferramentas">Ferramentas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#gear-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#computer-application">Application</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-license">License</a>
+  <a href="#rocket-executando-o-projeto">Executando o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#muscle-status-do-projeto">Status do Projeto</a>
 </p>
 
 ## :dart: Objetivo
@@ -39,7 +38,7 @@
 - And some other packages...
 
 
-## :gear: How To Use
+## :rocket: Executando o Projeto
 
 To clone and run this application, you'll need [Git][git], [Node.js v14.15.0][nodejs] or higher + [Yarn v1.22][yarn] or higher installed on your computer. From your command line:
 
@@ -57,7 +56,8 @@ $ yarn install
 $ yarn start
 ```
 
+## :muscle: Status do Projeto
 
-
+<p>:construction:<strong>Em construção</strong>:construction:</p>
 
 
